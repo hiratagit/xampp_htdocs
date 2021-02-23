@@ -1,0 +1,1 @@
+<li>{{ $customer['name']}} : {{ $customer['mail'] }}</li>

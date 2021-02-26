@@ -7,7 +7,7 @@ use Illuminate\Http\Response;
 
 class TestController extends Controller
 {
-    public function index(string $name = 'testname') {
+    public function index(Request $request, string $name = 'testname') {
 
         $data =  [
             'name' => $name, 
@@ -18,6 +18,8 @@ class TestController extends Controller
                 ['name' => '斎藤洋子', 'mail' => 'saito@gmail.com'],
                 ['name' => '山中信二', 'mail' => 'ymanaka@gmail.com'],
             ],
+            'message' => 'Hello!',
+            'data' => $request->data,
         ];
 
         return view('test.test', $data);

@@ -36,3 +36,5 @@ Route::post('hello', [HelloController::class, 'post']);
 
 Route::get('form', [FormController::class, 'index']);
 Route::post('form', [FormController::class, 'post']);
+
+Route::get ('form-fail', [FormController::class, 'formFail']);

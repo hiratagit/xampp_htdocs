@@ -27,7 +27,7 @@ img{
 
 <div class="header">
     <div class="logo">
-        <img src="img/laravel.png" alt="laravel-logo">
+        <img src="http://<?php print $_SERVER['HTTP_HOST']; ?>/img/laravel.png" alt="laravel-logo">
     </div>
     <h1>Laravel 学習 2021</h1>
 </div>

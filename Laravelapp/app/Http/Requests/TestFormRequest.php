@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\MyTestRule;
 
 class TestFormRequest extends FormRequest
 {
@@ -20,7 +21,7 @@ class TestFormRequest extends FormRequest
         return [
             'name' => 'required',
             'mail' => 'required|email',
-            'age' => 'required|numeric|between:0,150',
+            'age' => ['required', new MyTestRule(5)],
         ];
     }
     
@@ -32,6 +33,7 @@ class TestFormRequest extends FormRequest
             'age.required' => '年齢必須やで',
             'age.numeric' => '数字ちゃうで',
             'age.between' => '間が違うで',
+            'age.test' => 'Test:5の倍数のみ受け付けます！',
         ];
 
     }

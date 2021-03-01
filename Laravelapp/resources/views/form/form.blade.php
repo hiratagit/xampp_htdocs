@@ -8,11 +8,6 @@
 @section('form-content')
 <p>{{ $msg }}</p>
 
-@if(count($errors) > 0) 
-    @foreach($errors->all() as $error)
-        <p>{{ $error }}</p>
-    @endforeach
-@endif
 <form action="/form" method="post">
     @csrf
     <p><label for="name">name: <input id="name" type="text" name="name" value="{{ old('name') }}"></label></p>
@@ -20,6 +15,18 @@
     <p style="color: red"><small>{{ $errors->first('name') }}</small></p>
     @endif
 
+    <p>選択: 
+    <label for="radio-mail">メール<input id="radio-mail" type="radio" name="radio" value="mail" {{ old('radio') === 'mail'? 'checked': '' }} ></label>
+    <label for="radio-age">年齢<input id="radio-age" type="radio" name="radio" value="age"  {{ old('radio') === 'age'? 'checked': '' }}></label>
+    </p>
+    @if($errors->has('radio'))
+    <p style="color: red"><small>{{ $errors->first('radio') }}</small></p>
+    @endif
+
+    <p><label for="intext">記入欄: <input id="intext" type="text" name="intext" value="{{ old('intext') }}"></label></p>
+    @if($errors->has('intext'))
+    <p style="color: red"><small>{{ $errors->first('intext') }}</small></p>
+    @endif
 
     <p><label for="mail">mail: <input id="mail" type="text" name="mail" value="{{ old('mail') }}"></label></p>
     @error('mail')

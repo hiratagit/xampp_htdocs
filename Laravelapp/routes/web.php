@@ -8,6 +8,7 @@ use App\Http\Middleware\TestMiddleware;
 use App\Http\Middleware\TestResponseMiddleware;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\CookieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,5 +37,6 @@ Route::post('hello', [HelloController::class, 'post']);
 
 Route::get('form', [FormController::class, 'index']);
 Route::post('form', [FormController::class, 'post']);
-
+Route::get('cookie', [CookieController::class, 'index']);
+Route::post('cookie', [CookieController::class, 'post']);
 Route::get ('form-fail', [FormController::class, 'formFail']);

@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-    <form action="/database/edit" method="post">
+    <form action="/database/update" method="post">
     <table>
     @csrf
     <input type="hidden" name="id" value="{{ $form->id }}">

@@ -1,5 +1,5 @@
 @extends('layouts.test2app')
-@section('title', 'データベースのレコード削除')
+@section('title', 'データベースの削除')
 
 @section('header')
     @include('components.header')

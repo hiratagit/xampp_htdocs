@@ -47,8 +47,8 @@ Route::get('database', [DatabaseController::class, 'index']);
 Route::get('database/add', [DatabaseController::class, 'add']);
 Route::post('database/add', [DatabaseController::class, 'create']);
 
-Route::get('database/edit', [DatabaseController::class, 'edit']);
-Route::post('database/edit', [DatabaseController::class, 'update']);
+Route::get('database/update', [DatabaseController::class, 'edit']);
+Route::post('database/update', [DatabaseController::class, 'update']);
 
 Route::get('database/delete', [DatabaseController::class, 'delete']);
 Route::post('database/delete', [DatabaseController::class, 'remove']);

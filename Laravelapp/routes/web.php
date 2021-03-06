@@ -10,6 +10,7 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\CookieController;
 use App\Http\Controllers\DatabaseController;
+use App\Http\Controllers\PersonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,3 +53,16 @@ Route::post('database/update', [DatabaseController::class, 'update']);
 
 Route::get('database/delete', [DatabaseController::class, 'delete']);
 Route::post('database/delete', [DatabaseController::class, 'remove']);
+
+Route::get('person', [PersonController::class, 'index']);
+
+Route::get('person/find', [PersonController::class, 'find']);
+Route::post('person/find', [PersonController::class, 'search']);
+
+Route::get('person/add', [PersonController::class, 'add']);
+Route::post('person/add', [PersonController::class, 'create']);
+
+Route::get('person/edit', [PersonController::class, 'edit']);
+Route::post('person/edit', [PersonController::class, 'update']);
+Route::get('person/delete', [PersonController::class, 'delete']);
+Route::post('person/delete', [PersonController::class, 'remove']);

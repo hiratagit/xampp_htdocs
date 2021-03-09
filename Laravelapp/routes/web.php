@@ -11,6 +11,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\CookieController;
 use App\Http\Controllers\DatabaseController;
 use App\Http\Controllers\PersonController;
+use App\Http\Controllers\BoardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,3 +67,8 @@ Route::get('person/edit', [PersonController::class, 'edit']);
 Route::post('person/edit', [PersonController::class, 'update']);
 Route::get('person/delete', [PersonController::class, 'delete']);
 Route::post('person/delete', [PersonController::class, 'remove']);
+
+Route::get('board', [BoardController::class, 'index']);
+
+Route::get('board/add', [BoardController::class, 'add']);
+Route::post('board/add', [BoardController::class, 'create']);

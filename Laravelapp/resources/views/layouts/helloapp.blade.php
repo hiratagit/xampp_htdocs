@@ -22,7 +22,7 @@
     @section('menubar')
     <h2 class="menutitle">※メニュー</h2>
     <ul>
-            <li></li>
+            <li>Home</li>
             <li>@show</li>
     </ul>
     <hr size="1">

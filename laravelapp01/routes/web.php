@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 Use App\Http\Controllers\TestController;
 use App\Http\Controllers\ContactformController;
+use App\Http\Controllers\ContactformShowController;
+use App\Http\Controllers\ContactformDoneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +30,14 @@ Route::get('/honoka', [TestController::class, 'demo']);
 
 Route::get('/contactform', [ContactformController::class, 'index']);
 Route::post('/contactform', [ContactformController::class, 'post']);
+
+Route::post('/contactform/done', [ContactformDoneController::class, 'done']);
+
+
+//@param method : DBデータの取得方法
+// dbclass => DBクラス
+// querybuilder => クエリビルダ
+// その他 => Eloquent ORM
+
+Route::get('/show/{method?}', [ContactformShowController::class, 'index']);
+

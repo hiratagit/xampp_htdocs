@@ -4,11 +4,12 @@
     background-color: #007bff;;
     padding-top: 100px;
     margin-top: 2em;
+    padding-bottom: 1em;
 }
 .copyright {
     text-align: center;
     color: white;
-    padding: 1em;
+    padding: 0;
 }
 </style>
 

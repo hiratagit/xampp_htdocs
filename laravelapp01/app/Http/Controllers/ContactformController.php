@@ -16,8 +16,16 @@ class ContactformController extends Controller
 
     public function post(ContactformRequest $request) {
 
-        $msg = '正しく入力されました。';
+        $msg = '下記の内容でよろしいですか？';
+        $input_data = [
+            'name' => $request->name,
+            'tel' => $request->tel,
+            'email' => $request->email,
+            'gender' => $request->gender,
+            'kind' => $request->kind,
+            'text' => $request->text,
+        ];
 
-        return view('contactform.index', [ 'msg' => $msg ]);
+        return view('contactform.confirm', [ 'msg' => $msg, 'input_data' => $input_data ]);
     }
 }

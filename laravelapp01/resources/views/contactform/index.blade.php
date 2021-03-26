@@ -17,13 +17,6 @@
     </div>
     @endunless
 
-    <!-- @if(count($errors) > 0)
-        <div class="contact-alert alert-danger">
-            @foreach($errors->all() as $error)
-                <p>{{ $error }}</p>
-            @endforeach
-        </div>
-    @endif -->
     <div class="form-group">
         <label for="name">お名前</label>
         <input id="name" class="form-control" type="text" name="name" value="{{ old('name') }}">
@@ -101,7 +94,9 @@
         </div>
     @endif
 
-    <input id="form_submit" class="btn btn-primary" type="submit" value="送信">
+    <div class="submit-area">
+        <input id="form_submit" class="btn btn-success" type="submit" value="内容確認">
+    </div>
 </form>
 @endsection
 

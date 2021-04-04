@@ -5,6 +5,7 @@ Use App\Http\Controllers\TestController;
 use App\Http\Controllers\ContactformController;
 use App\Http\Controllers\ContactformShowController;
 use App\Http\Controllers\ContactformDoneController;
+use App\Http\Controllers\GenderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +41,5 @@ Route::post('/contactform/done', [ContactformDoneController::class, 'done']);
 // その他 => Eloquent ORM
 
 Route::get('/show/{method?}', [ContactformShowController::class, 'index']);
+Route::get('/gender', [GenderController::class, 'index']);
 

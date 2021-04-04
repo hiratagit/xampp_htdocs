@@ -28,8 +28,8 @@
     </div>
     <fieldset class="form-group">
         <legend>性別</legend>
-        <p class="confirm-output">{{ $input_data['gender'] === '1' ? '男' : '女' }}</p>
-        <input type="hidden" name="gender" value="{{ $input_data['gender'] }}">
+        <p class="confirm-output">{{ $input_data['gender_id'] === '1' ? '男' : '女' }}</p>
+        <input type="hidden" name="gender_id" value="{{ $input_data['gender_id'] }}">
     </fieldset>
     <div class="form-group">
         <label for="kind">お問い合わせの種類</label>

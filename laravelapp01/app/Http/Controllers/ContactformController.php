@@ -21,7 +21,7 @@ class ContactformController extends Controller
             'name' => $request->name,
             'tel' => $request->tel,
             'email' => $request->email,
-            'gender' => $request->gender,
+            'gender_id' => $request->gender_id,
             'kind' => $request->kind,
             'text' => $request->text,
         ];

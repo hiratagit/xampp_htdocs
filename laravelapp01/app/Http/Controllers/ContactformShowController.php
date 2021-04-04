@@ -8,17 +8,23 @@ use App\Models\Contactform;
 
 class ContactformShowController extends Controller
 {
-    public function index(Request $request, $method = 'dbclass') {
+    public function index(Request $request, $method = 'eloquent') {
+
+        $sort = $request->sort;
+
+        if($sort === null) {
+            $sort = 'id';
+        }
 
         if($method === "dbclass") {
             $data =  $this->getByDBclass();
         } elseif ($method === "querybuilder") {
-            $data =  $this->getByBuilder();
+            $data =  $this->getByBuilder($sort);
         } else {
-            $data = $this->getByEloquent();
+            $data = $this->getByEloquent($sort);
         }
 
-        return view('contactform.show', [ 'items' => $data[0], 'method' => $data[1] ]);
+        return view('contactform.show', [ 'items' => $data[0], 'method' => $data[1], 'sort' => $sort ]);
     }
 
     protected function getByDBclass() {
@@ -28,15 +34,16 @@ class ContactformShowController extends Controller
         return $data;
     }
 
-    protected function getByBuilder() {
-        $items = DB::table('contactforms')->orderBy('id', 'desc')->limit(10)->get();
+    protected function getByBuilder($sort) {
+        // $items = DB::table('contactforms')->orderBy('id', 'desc')->limit(10)->get();
+        $items = DB::table('contactforms')->orderBy($sort, 'desc')->paginate(5);
         $method = 'DBクラス(Query Builder)';
         $data = [ $items, $method ];
         return $data;
     }
 
-    protected function getByEloquent() {
-        $items = Contactform::orderBy('id', 'desc')->limit(20)->get();
+    protected function getByEloquent($sort) {
+        $items = Contactform::orderBy($sort, 'desc')->paginate(5);
         $method = 'Eloquent ORM';
         $data = [ $items, $method ];
         return $data;

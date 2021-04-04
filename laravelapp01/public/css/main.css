@@ -77,6 +77,11 @@ form {
     text-align: center;
 }
 
+.contactform-show-table th a {
+    color: white;
+    text-decoration: underline;
+}
+
 .contactform-show-table td {
     vertical-align: middle;
     text-align: center;
@@ -86,6 +91,21 @@ form {
     padding: 1em;
 }
 
+nav[aria-label="Pagination Navigation"] div:first-child {
+    display: none;
+}
+
+nav[aria-label="Pagination Navigation"] div {
+    text-align: center;
+}
+svg {
+    width: 30px;
+}
+
+.pagination {
+    justify-content: center;
+    margin-top: 2em;
+}
 
 /*--------------------------------------
 お問い合わせ完了画面

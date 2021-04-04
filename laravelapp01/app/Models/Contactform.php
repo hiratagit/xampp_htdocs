@@ -9,4 +9,12 @@ class Contactform extends Model
 {
     use HasFactory;
     protected $guarded = array('id');
+
+    public function genderBelong() {
+        return $this->belongsTo('App\Models\Gender', 'gender_id');
+    }
+
+    public function getGenderName() {
+        return $this->genderBelong->gender_name;
+    }
 }

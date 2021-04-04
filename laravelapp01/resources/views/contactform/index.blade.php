@@ -48,17 +48,17 @@
         <legend>性別</legend>
         <div class="form-check">
             <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="gender" id="gender1" value="1">
+            <input type="radio" class="form-check-input" name="gender_id" id="gender1" value="1">
             男性
             </label>
         </div>
         <div class="form-check">
         <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="gender" id="gender2" value="2" >
+            <input type="radio" class="form-check-input" name="gender_id" id="gender2" value="2" >
             女性
             </label>
         </div>
-        @error('gender')
+        @error('gender_id')
         <div class="contact-alert alert-danger">
             <p>{{ $message }}</p>
         </div>
